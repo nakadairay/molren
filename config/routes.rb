@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   }
   root "practices#index"
 
-  resources :users, only: [:show, :update]
+  resources :users, only: [:new, :show, :update]
   resources :cards, only: [:new, :create]
   resources :practices, only: :order do
     post 'apply', on: :member

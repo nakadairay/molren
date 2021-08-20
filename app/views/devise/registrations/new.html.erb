@@ -24,31 +24,29 @@
         </div>
       </div>
 
-      <div class="FormField">
-        <div class="FormField__label--normal">
+      <%if @sns_id.present? %>
+        <%= hidden_field_tag :sns_auth, true %>
+      <% else %>
+        <div class="field">
           <%= f.label :password %>
-          （英数字で6文字以上）
+          <% @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
-        <div class="FormField__input--normal">
-          <%= f.password_field :password, autocomplete: "off" %>
+      
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
-      </div>
-
-      <div class="FormField">
-        <div class="FormField__label--normal">
-          <%= f.label :password（確認用） %>
-        </div>
-        <div class="FormField__input--normal">
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-      </div><br>
+      <% end %>
 
       <div class="FormField">
         <div class="FormField__label--normal">
           <%= f.label :first_name（苗字） %>
         </div>
         <div class="FormField__input--normal">
-          <%= f.text_area :last_name %>
+          <%= f.text_area :first_name %>
         </div>
       </div><br>
 

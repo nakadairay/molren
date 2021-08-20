@@ -2,6 +2,7 @@
   <div class="AccountPage__title">
     <h1>ログインページ</h1>
     <%= render "devise/shared/links" %>
+
   </div><br>
   <div class="AccountPage__form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -26,6 +27,8 @@
         </div>
       </div>
     <% end %>
+    <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post%>
+    <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
   </div>
 </div>
 
