@@ -3,6 +3,6 @@
   <br/>
 <% end %>
 <% if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "新規登録", new_registration_path(resource_name), class: 'Button' %>
+  <%= link_to "新規登録", new_user_path(resource_name), class: 'Button' %>
   <br/>
 <% end %>
