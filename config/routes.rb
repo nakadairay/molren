@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'cards/new'
+  get 'users/show'
+  get 'practices/index'
+  devise_for :users
+  root "practices#index"
+
+  resources :users, only: [:show, :update]
+  resources :cards, only: [:new, :create]
+  resources :practices, only: :order do
+    post 'apply', on: :member
+  end
 end
