@@ -1,4 +1,5 @@
-<%= link_to 'マイページへ行く', user_path(current_user) %>
+<%= render "shared/header" %>
+
 <div class="content">
   <% @practices.each do |practice| %> 
     <p>練習会名：<%=  practice.name %></p>
