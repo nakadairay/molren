@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+
 
   enum sex: { man: 0, woman: 1}
   with_options presence: true do
@@ -21,5 +22,6 @@ class User < ApplicationRecord
   end
 
   has_one :card, dependent: :destroy
+  has_many :sns_credentials
 
 end

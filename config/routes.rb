@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   get 'cards/new'
   get 'users/show'
   get 'practices/index'
-  devise_for :users
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
   root "practices#index"
 
   resources :users, only: [:show, :update]
