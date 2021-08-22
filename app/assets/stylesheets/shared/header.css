@@ -14,10 +14,6 @@
   font-size: 1.2em;
 }
 
-.logo img {
-  width: 100px;
-}
-
 .nav {
   display: flex;
   align-items: center;

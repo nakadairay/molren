@@ -1,48 +1,50 @@
-<div class="AccountPage">
-  <div class="AccountPage__title">
-    <h1>マイページ</h1>
-  </div><br>
-  <div class="Card__title">
-    <h2>カード情報</h2>
-  </div>
-  <div class="Card_info">
-    【カード番号】
-    <br>
-    <%= "**** **** **** " + @card[:last4] %>
-    <br>
-    【有効期限】
-    <br>
-    <%= @card[:exp_month] %>
-    /
-    <%= @card[:exp_year] %>
-  </div>
+<%= render "shared/second-header" %>
 
-  <div class="user__wrapper">
-    <h2 class="page-heading">
-      <%= "#{@user.nickname}さんの情報" %>
-    </h2>
-    <table class="table">
-      <tbody>
-        <tr>
-          <th class="table__col1">ニックネーム</th>
-          <td class="table__col2"><%= @user.nickname %></td>
-        </tr>
-        <tr>
-          <th class="table__col1">誕生日</th>
-          <td class="table__col2"><%= @user.birthday %></td>
-        </tr>
-      </tbody>
-    </table>
-    <h2 class="page-heading">
-      <%= "#{@user.nickname}さんの練習会"%>
-    </h2>
-    <div class="user__card">
-      <%#= render partial: "prototypes/prototype", collection: @user.prototypes %>
+  <div class="AccountPage">
+    <div class="AccountPage__title">
+      <h1>マイページ</h1>
+    </div><br>
+    <div class="Card__title">
+      <h2>カード情報</h2>
+    </div>
+    <div class="Card_info">
+      【カード番号】
+      <br>
+      <%= "**** **** **** " + @card[:last4] %>
+      <br>
+      【有効期限】
+      <br>
+      <%= @card[:exp_month] %>
+      /
+      <%= @card[:exp_year] %>
+    </div>
+  
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの情報" %>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">ニックネーム</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">誕生日</th>
+            <td class="table__col2"><%= @user.birthday %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの練習会"%>
+      </h2>
+      <div class="user__card">
+        <%#= render partial: "prototypes/prototype", collection: @user.prototypes %>
+      </div>
+    </div>
+      <br>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <br>
+      <%= link_to "練習会一覧へ戻る", root_path %>
     </div>
   </div>
-    <br>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <br>
-    <%= link_to "練習会一覧へ戻る", root_path %>
-  </div>
-</div>
