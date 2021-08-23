@@ -1,0 +1,13 @@
+<%= render "shared/second-header" %>
+
+<%= "#{@practice.name}の情報" %>
+<%= "#{@practice.practice_on}" %>
+<%= "#{@practice.practice_at}" %>
+<%= "#{@practice.place}" %>
+<%= "#{@practice.capacity}" %>
+<%= "#{@practice.comment}" %>
+<% if user_signed_in? %>
+  <%= link_to '申し込む', apply_practice_path(@practice.id), method: :post %>
+<% else %>
+  <%= link_to '申し込むためにはログインが必要です', new_user_session_path %>
+<% end %>   

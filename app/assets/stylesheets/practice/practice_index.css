@@ -1,0 +1,34 @@
+
+
+
+.practices{
+  box-sizing: border-box;
+  width: 15em;
+  padding: 1.2em 0.8em;
+  margin: 0 auto;
+  color: #333;
+  border: 0.5px solid #e9eaea;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.content-1,
+.content-2 {
+  margin: 0;
+}
+
+.content-2 {
+  padding: 0.8em 0;
+  font-size: 0.8em;
+}
+
+.content-3 {
+  margin: 0.8em 0;
+  font-size: 0.8em;
+  color: #00b5ad;
+  cursor: pointer;
+}
+
+.content-3:hover {
+  border-bottom: #00b5ad 1px solid;
+}

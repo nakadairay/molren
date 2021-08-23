@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :update]
   resources :cards, only: [:new, :create]
-  resources :practices, only: :order do
-    post 'apply', on: :member
+  resources :practices do
+    member do
+      post 'apply'
+    end
   end
 end
