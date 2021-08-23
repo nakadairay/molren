@@ -1,8 +1,12 @@
 <%= render "shared/header" %>
 
 <div class="content">
-  <% @practices.each do |practice| %> 
-    <%= link_to practice.name, practice_path(practice.id) %>
-    <p>値段：<%= practice.price %>円</p>
+  <% @practices.each do |practice| %>
+    <div class="practices">
+      <h3 class="content-1"><%= practice.name %></h3>
+      <p class="content-2"><%= practice.comment %></p>
+      <%= link_to '詳細はこちら', practice_path(practice.id), class: "content-3" %>
+      <p>値段：<%= practice.price %>円</p>
+    </div>
   <% end %>
 </div>

@@ -49,9 +49,3 @@
   border: 1px #00b5ad solid;
   border-radius: 3px;
 }
-
-@media screen and (max-width: 480px) {
-  .login {
-    display: none;
-  }
-}
