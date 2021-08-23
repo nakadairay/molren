@@ -1,0 +1,8 @@
+<%= render "shared/second-header" %>
+
+<%= "#{@practice.name}の情報" %>
+<%= "#{@practice.practice_on}" %>
+<%= "#{@practice.practice_at}" %>
+<%= "#{@practice.place}" %>
+<%= "#{@practice.comment}" %>
+<%= link_to '申し込む', apply_practice_path(@practice.id), method: :post %>

@@ -1,8 +1,12 @@
 class PracticesController < ApplicationController
-  before_action :find_practice, only: :apply
+  before_action :find_practice, only: [:show, :apply]
 
   def index
     @practices = Practice.all
+  end
+
+  def show
+    
   end
 
   def apply

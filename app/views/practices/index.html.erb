@@ -2,8 +2,7 @@
 
 <div class="content">
   <% @practices.each do |practice| %> 
-    <p>練習会名：<%=  practice.name %></p>
+    <%= link_to practice.name, practice_path(practice.id) %>
     <p>値段：<%= practice.price %>円</p>
-    <%= link_to '申し込む', apply_practice_path(practice.id), method: :post %>
   <% end %>
 </div>
