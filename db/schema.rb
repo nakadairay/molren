@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_014459) do
+ActiveRecord::Schema.define(version: 2021_08_23_020839) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "customer_token", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_014459) do
     t.datetime "practice_at"
     t.text "place"
     t.text "comment"
+    t.integer "capacity"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

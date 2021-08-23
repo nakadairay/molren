@@ -20,6 +20,7 @@ class PracticesController < ApplicationController
       currency: 'jpy'
     )
     PracticeApply.create(practice_id: params[:id])
+
     redirect_to root_path
   end
 
