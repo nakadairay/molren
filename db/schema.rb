@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_092334) do
     t.integer "price", null: false
     t.bigint "user_id", null: false
     t.date "practice_on", null: false
-    t.datetime "practice_at", null: false
+    t.time "practice_at", null: false
     t.text "place", null: false
     t.text "comment", null: false
     t.integer "capacity"
