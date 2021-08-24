@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_020839) do
+ActiveRecord::Schema.define(version: 2021_08_20_092334) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "customer_token", null: false
@@ -28,16 +28,17 @@ ActiveRecord::Schema.define(version: 2021_08_23_020839) do
   end
 
   create_table "practices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.integer "price"
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.bigint "user_id", null: false
+    t.date "practice_on", null: false
+    t.datetime "practice_at", null: false
+    t.text "place", null: false
+    t.text "comment", null: false
+    t.integer "capacity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
-    t.date "practice_on"
-    t.datetime "practice_at"
-    t.text "place"
-    t.text "comment"
-    t.integer "capacity"
+    t.index ["user_id"], name: "index_practices_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -70,5 +71,6 @@ ActiveRecord::Schema.define(version: 2021_08_23_020839) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "practice_applies", "practices"
+  add_foreign_key "practices", "users"
   add_foreign_key "sns_credentials", "users"
 end
