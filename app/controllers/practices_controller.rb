@@ -1,5 +1,5 @@
 class PracticesController < ApplicationController
-  before_action :find_practice, only: [:show, :apply]
+  before_action :find_practice, only: [:edit, :show, :update, :destroy, :apply]
 
   def index
     @practices = Practice.includes(:user)
@@ -13,8 +13,24 @@ class PracticesController < ApplicationController
     Practice.create(practice_params)
   end
 
-
   def show
+  end
+
+  def edit
+    
+  end
+
+  def update
+    if @practice.update(practice_params)
+      redirect_to practice_path(@practice.id)
+    else
+      render action: :edit
+    end
+  end
+
+  def destroy
+    @practice.destroy
+    redirect_to root_path
   end
 
   def apply

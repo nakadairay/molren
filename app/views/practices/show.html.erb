@@ -6,8 +6,15 @@
 <%= "#{@practice.place}" %>
 <%= "#{@practice.capacity}" %>
 <%= "#{@practice.comment}" %>
+<%= "#{@practice.price}" %>
 <% if user_signed_in? %>
+  <% if current_user.id == @practice.user_id%>
+    <%= link_to "編集", edit_practice_path(@practice.id), method: :get, class: "" %>
+    <p class="">or</p>
+    <%= link_to "削除", practice_path(@practice.id), method: :delete, class:"" %>
+  <% else %>    
   <%= link_to '申し込む', apply_practice_path(@practice.id), method: :post %>
+  <% end %>
 <% else %>
   <%= link_to '申し込むためにはログインが必要です', new_user_session_path %>
-<% end %>   
+<% end %>
