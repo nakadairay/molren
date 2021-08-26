@@ -1,0 +1,19 @@
+<%= render "shared/second-header" %>
+
+<div class="">
+  <div class="">
+    <h3>練習会を作る</h3>
+    <%= form_with(model: @practice, local: true) do |form| %>
+      <%= form.text_field :name, placeholder: "練習会名" %>
+      <%= form.text_area :place, placeholder: "場所詳細" %>
+      <%= form.date_select :practice_on, include_blank: true, selected: Date.today %>
+      <%= form.time_select :practice_at %>
+      <%= form.text_field :price, placeholder: "参加費" %>
+      <%= form.number_field :capacity, class: "", min: 1 %>
+      <%= form.text_area :comment, placeholder: "ひとこと" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
+
+ 

@@ -2,8 +2,17 @@ class PracticesController < ApplicationController
   before_action :find_practice, only: [:show, :apply]
 
   def index
-    @practices = Practice.all
+    @practices = Practice.includes(:user)
   end
+
+  def new
+    @practice = Practice.new
+  end
+
+  def create
+    Practice.create(practice_params)
+  end
+
 
   def show
   end
@@ -28,4 +37,9 @@ class PracticesController < ApplicationController
   def find_practice
     @practice = Practice.find(params[:id])
   end
+
+  def practice_params
+    params.require(:practice).permit(:name, :price, :practice_on, :practice_at, :place, :comment,:capacity).merge(user_id: current_user.id)
+  end
 end
+
