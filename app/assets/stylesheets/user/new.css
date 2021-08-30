@@ -9,11 +9,9 @@
   text-align: center 
 }
 
-
 input[type="email"] {
   width: 300px;
   height: 40px;
-  
 }
 
 .input-mail {
@@ -33,6 +31,7 @@ input[type="password"] {
   width: 300px;
   height: 40px;
 }
+
 .input-pw {
   box-sizing: border-box;
   padding: 10px 10px;
@@ -58,6 +57,7 @@ input[type="password"] {
   justify-content: space-between;
   padding: 20px 40px;
 }
+
 .t-deco:before,
 .t-deco:after {
   content: "";
@@ -142,8 +142,8 @@ input[type=submit]{
   cursor: pointer;
   appearance: none;
   transition: 0.2s;
-
 }
+
 .login-button:hover {
   background: #78cec8
 }

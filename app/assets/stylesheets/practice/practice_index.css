@@ -1,4 +1,9 @@
-
+.content{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 
 .practices{
@@ -31,4 +36,28 @@
 
 .content-3:hover {
   border-bottom: #00b5ad 1px solid;
+}
+
+.completion-btn {
+  width: 120px;
+  background: #00b5ad;
+  border: 1px #00b5ad solid;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.completion-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.fas fa-running {
+  width: 60%;
 }

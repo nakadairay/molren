@@ -1,6 +1,8 @@
 .header {
   box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
+  padding: 2vh 15vw;
+  flex-direction: column;
 }
 
 .header-inner {

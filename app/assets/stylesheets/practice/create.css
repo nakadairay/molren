@@ -1,0 +1,22 @@
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5em;
+  padding: 0.2em 0.3em;
+  margin: 0 auto;
+  text-decoration: none;
+  border: 0.8px solid #aaa;
+  border-radius: 3px;
+}
+
+.twitter-text {
+  font-size: 0.7em;
+  color: #757575;
+}
+
+.icon {
+  margin-right: 0.4em;
+  font-size: 0.8em;
+  color: #55acee;
+}
