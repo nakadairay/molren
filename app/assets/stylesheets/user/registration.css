@@ -1,34 +1,107 @@
-.AccountPage{
-  padding-top:25px;
-  margin-left:10px;
-  margin-right:10px;
+input[type="text"] {
+  width: 300px;
+  height: 40px;
+  border-radius: 6px;
 }
 
-.AccountPage__title{
-  max-width:600px;
-  margin:0 auto;
-  text-align:center;
-  -webkit-border-radius:6px;
-  -moz-border-radius:6px;
-  border-radius:6px;
-  background-color:#FAFAFA;
+.input-text {
+  box-sizing: border-box;
+  padding: 10px 10px;
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+  border: solid 1px #ccc;
+  border-radius: 6px;
+  outline: 0;
+  transition: 0.3s;
+  -webkit-appearance: none;
 }
 
-.AccountPage__head{
-  -webkit-border-radius:6px 6px 0px 0px;
-  -moz-border-radius:6px 6px 0px 0px;
-  border-radius:6px 6px 0px 0px;
-  background-color:#2ABCA7;
-  color:#FAFAFA;
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
-h1 {
-  text-align:center;
-  padding:18px 0 18px 0;
-  font-size: 1.4em;
+.form-group:first-child {
+  padding: 0;
 }
 
-.FormField__input--normal{
-  
+.form-text-wrap {
+  width: 100%;
+  height: 20%;
 }
 
+.form-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.input-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.info-text {
+  color: #888;
+  font-size: 15px;
+  margin-top: 3px;
+}
+
+.form-info-header {
+  font-weight: bold;
+}
+
+.form-info-text {
+  font-size: 15px;
+}
+
+.input-name-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.input-name {
+  width: 130px;
+  margin: 5px 20px 0 20px;
+  height: 48px;
+  line-height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  resize: none;
+}
+
+.input-birth-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-birth-wrap select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.input-birth-wrap p {
+  line-height: 60px;
+  padding: 0 5px;
+}
