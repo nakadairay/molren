@@ -74,26 +74,24 @@ vertical-align: top;
   border-bottom: #00b5ad 1px solid;
 }
 
-.completion-btn {
-  width: 120px;
-  background: #00b5ad;
-  border: 1px #00b5ad solid;
-  text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
-  position: fixed;
-  padding: 15px;
+.btn-circle-fishy {
+  display: inline-block;
   text-decoration: none;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #709dff 0%, #91fdb7 100%);
+  transition: .4s;
+  position:fixed;
+  right:50px;
+  bottom:50px;
 }
 
-.completion-btn-text {
-  color: #fff;
-  display: block;
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.fas fa-running {
-  width: 60%;
+.btn-circle-fishy:hover {
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
 }
