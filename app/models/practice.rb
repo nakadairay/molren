@@ -9,7 +9,7 @@ class Practice < ApplicationRecord
     validates :comment
   end
 
-  belongs_to :user
-  has_one :practice_apply
+  belongs_to :user, optional: true
+  has_one :practice_apply, foreign_key: "practice_id", dependent: :destroy
 
 end

@@ -2,7 +2,9 @@
 
 <div class="AccountPage">
   <div class="AccountPage__title">
+    <div class="AccountPage__head">
     <h1>新規ユーザー登録</h1><br>
+    </div>
   </div>
   <div class="AccountPage__form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -100,8 +102,8 @@
         <%= f.radio_button :sex, :woman %>
       </div>
 
-      <div class="actions">
-        <%= f.submit "新規登録" %>
+      <div class="registration-btn">
+        <%= f.submit "新規登録", class: "registration-text"%>
       </div>
     <% end %>
   </div>

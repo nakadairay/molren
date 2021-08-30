@@ -11,9 +11,9 @@
   <% if current_user.id == @practice.user_id%>
     <%= link_to "編集", edit_practice_path(@practice.id), method: :get, class: "" %>
     <p class="">or</p>
-    <%= link_to "削除", practice_path(@practice.id), method: :delete, class:"" %>
+    <%= link_to "削除", practice_path(@practice.id), method: :delete, data: { confirm: "削除しますか？" } %>
   <% else %>    
-  <%= link_to '申し込む', apply_practice_path(@practice.id), method: :post %>
+  <%= link_to '申し込む', apply_practice_path(@practice.id), method: :post { confirm: "申し込みしますか？（クレジット決済です）" }%>
   <% end %>
 <% else %>
   <%= link_to '申し込むためにはログインが必要です', new_user_session_path %>

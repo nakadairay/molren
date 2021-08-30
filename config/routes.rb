@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     member do
       post 'apply'
     end
+    collection do
+      get 'completion'
+    end
   end
 end
