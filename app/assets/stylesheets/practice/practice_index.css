@@ -11,10 +11,7 @@
   width: 23%;
   margin-bottom: 40px;
 }
-/*
-vertical-align: top;
-画像の下にできる隙間を消す
-*/
+
 .product-list img {
   margin-bottom: 10px;
   vertical-align: top;
@@ -40,7 +37,6 @@ vertical-align: top;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 
 .practices{
   box-sizing: border-box;

@@ -5,28 +5,32 @@
     <div class="practice-show">
       <h3>練習会を作る</h3>
       <%= form_with(model: @practice, local: true) do |form| %>
-        <div class="form-group">
+      <%= render 'shared/error_messages', model: form.object %>
+
+        <div class="practice-form-group">
           <%= form.text_field :name, placeholder: "練習会名" , class:"practice-input" %>
         </div>
-        <div class="form-group">
+        <div class="practice-form-group">
           <%= form.text_area :place, placeholder: "場所詳細" , class:"practice-area"%>
         </div>
-        <div class="form-group">
-          <%= form.date_field :practice_on, include_blank: true, selected: Date.today, class:"practice-area" %>
+        <div class="practice-form-group">
+          <div class="practice-form-date">
+            <%= form.date_field :practice_on, include_blank: true, selected: Date.today, class:"practice-datetime" %>
+            <%= form.time_field :practice_at, class:"practice-datetime" %> 
+          </div>
         </div>
-        <div class="form-group">
-          <%= form.time_field :practice_at, class:"practice-area" %> 
+        <div class="practice-form-group">
+          <div class="practice-form-date">
+          <%= form.text_field :price, placeholder: "参加費" , class:"practice-datetime"%>
+          <%= form.number_field :capacity, class: "", min: 1 , class:"practice-datetime" %>
+          </div>
         </div>
-        <div class="form-group">
-          <%= form.text_field :price, placeholder: "参加費" , class:"practice-input"%>
-        </div>
-        <div class="form-group">
-          <%= form.number_field :capacity, class: "", min: 1 , class:"practice-area" %>
-        </div>
-        <div class="form-group">
+        <div class="practice-form-group">
           <%= form.text_area :comment, placeholder: "ひとこと" , class:"practice-area"%>
         </div>
-        <%= form.submit "練習会を作成する", class: "practice-btn" %>
+        <div class="practice-form-btn">
+          <%= form.submit "練習会を作成する", class: "practice-btn" %>
+        </div>
       <% end %>
     </div>
   </div>
