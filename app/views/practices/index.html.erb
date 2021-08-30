@@ -1,31 +1,36 @@
 <%= render "shared/header" %>
 
-<div class="content">
-  <% @practice.each do |practice| %>
-    <div class="practices">
-      <h3 class="content-1"><%= practice.name %></h3>
-      <p class="content-2"><%= practice.comment %></p>
-      <%= link_to '詳細はこちら', practice_path(practice.id), class: "content-3" %>
-      <p>値段：<%= practice.price %>円</p>
-    </div>
-  <% end %>
-
-  <% if @practice.blank? %>
-  <li class=''>
-    <%= link_to new_practice_path do %>
-    <%= image_tag "", class: "" %>
-    <div class=''>
-      <h3 class="content-1">
-        練習会がありません
-      </h3>
-      <div class=''>
-        <span>1000円<br></span>
-      </div>
-    </div>
+<main>
+  <div id="top" class="wrapper">
+    <ul class="product-list">
+    <% @practice.each do |practice| %>
+      <li>
+        <div class="practices">
+          <h3 class="content-1"><%= practice.name %></h3>
+          <p class="content-2"><%= practice.comment %></p>
+          <%= link_to '詳細はこちら', practice_path(practice.id), class: "content-3" %>
+          <p>値段：<%= practice.price %>円</p>
+        </div>
+      </li>
     <% end %>
-  </li>
-  <% end %>
-</div>
+    </ul>
+  
+    <% if @practice.blank? %>
+    <li class=''>
+      <%= link_to new_practice_path do %>
+      <%= image_tag "", class: "" %>
+      <div class=''>
+        <h3 class="content-1">
+          練習会がありません
+        </h3>
+        <div class=''>
+          <span>1000円<br></span>
+        </div>
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </div>
 
 <%= link_to(new_practice_path, class: 'completion-btn') do %>
   <i class="fas fa-running fa-2x"></i>
