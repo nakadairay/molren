@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :practices do
     member do
       post 'apply'
+      get "csv_practice_user"
     end
     collection do
       get 'completion'

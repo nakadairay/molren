@@ -36,5 +36,8 @@
     <% else %>
       <%= link_to '申し込むためにはログインが必要です', new_user_session_path %>
     <% end %>
+  </div>
+
+  <%= link_to "CSV出力", csv_practice_user_practice_path(id: @practice.id) %>
 
 </main>

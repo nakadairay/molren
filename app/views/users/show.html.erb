@@ -38,8 +38,18 @@
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんの練習会"%>
       </h2>
-      <div class="user__card">
-      </div>
+      <ul class="product-list">
+      <% @practices.each do |practice| %>
+        <li>
+          <div class="practices">
+            <h3 class="content-1"><%= practice.name %></h3>
+            <p class="content-2"><%= practice.comment %></p>
+            <%= link_to '詳細はこちら', practice_path(practice.id), class: "content-3" %>
+            <p>値段：<%= practice.price %>円</p>
+          </div>
+        </li>
+      <% end %>
+      </ul>
     </div>
       <br>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

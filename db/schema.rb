@@ -22,9 +22,11 @@ ActiveRecord::Schema.define(version: 2021_08_20_092334) do
 
   create_table "practice_applies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "practice_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["practice_id"], name: "index_practice_applies_on_practice_id"
+    t.index ["user_id"], name: "index_practice_applies_on_user_id"
   end
 
   create_table "practices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,6 +73,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_092334) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "practice_applies", "practices"
+  add_foreign_key "practice_applies", "users"
   add_foreign_key "practices", "users"
   add_foreign_key "sns_credentials", "users"
 end
