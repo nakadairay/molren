@@ -10,7 +10,12 @@ class PracticesController < ApplicationController
   end
 
   def create
-    Practice.create(practice_params)
+    @practice = Practice.new(practice_params)
+    if @practice.save
+      redirect_to root_path
+    else
+      render action: :new
+    end
   end
 
   def show

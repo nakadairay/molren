@@ -1,0 +1,77 @@
+.practice-show h3{
+  text-align: center;
+}
+
+.practice-form-group{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.practice-area{
+  width: 360px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: solid 1px #ccc;
+  background-image: none;
+  font-size: 16px;
+}
+
+.practice-area:focus {
+  border: 1px solid #00b5ad;
+}
+
+.practice-input{
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+  border: solid 1px #ccc;
+  border-radius: 6px;
+  outline: 0;
+  transition: 0.3s;
+  -webkit-appearance: none;
+}
+
+.practice-input:focus {
+  border: 1px solid #00b5ad;
+}
+
+.practice-form-date{
+  display: flex;
+}
+
+.practice-datetime{
+  width: 180px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: solid 1px #ccc;
+  background-image: none;
+  font-size: 16px;
+}
+
+.practice-datetime:focus{
+  border: 1px solid #00b5ad;
+}
+
+.practice-form-btn{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.practice-btn{
+  position: relative;
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #00b5ad;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #00b5ad solid;
+  transition: 0.2s ease;
+}

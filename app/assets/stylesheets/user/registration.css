@@ -86,6 +86,7 @@ input[type="text"] {
 
 .input-birth-wrap {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -105,3 +106,10 @@ input[type="text"] {
   line-height: 60px;
   padding: 0 5px;
 }
+
+.sex-field{
+  display: flex;
+  justify-content: center;
+  padding: 10px 16px 8px;
+}
+
