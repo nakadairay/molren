@@ -10,3 +10,4 @@
 | 実装予定の機能      | null: false               |
 | ローカルでの動作方法 | null: false               |
 | データベース設計    | null: false               |
+|
