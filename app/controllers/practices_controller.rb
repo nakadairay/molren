@@ -1,5 +1,7 @@
 class PracticesController < ApplicationController
   before_action :find_practice, only: [:edit, :show, :update, :destroy, :apply]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :not_user_move_index, only: [:edit, :update, :destroy]
   require 'csv'
 
   def index
@@ -89,6 +91,10 @@ class PracticesController < ApplicationController
 
   def practice_params
     params.require(:practice).permit(:name, :price, :practice_on, :practice_at, :place, :comment,:capacity).merge(user_id: current_user.id)
+  end
+
+  def not_user_move_index
+    redirect_to root_path unless current_user.id == @practice.user_id
   end
 
   def create_csv(filename, csv1)
