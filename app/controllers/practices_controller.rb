@@ -22,11 +22,9 @@ class PracticesController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
-    
   end
 
   def update
@@ -63,22 +61,21 @@ class PracticesController < ApplicationController
     practiceapply = PracticeApply.where(practice_id: params[:id]).includes(:user)
     practice = Practice.find(params[:id])
 
-    filename = practice.name + Date.current.strftime("%Y%m%d")
+    filename = practice.name + Date.current.strftime('%Y%m%d')
 
-    columns_ja = ["ニックネーム", "名字", "名前", "メールアドレス"]
-    columns = ["nickname", "last_name", "first_name", "email" ]
+    columns_ja = %w[ニックネーム 名字 名前 メールアドレス]
+    columns = %w[nickname last_name first_name email]
 
     csv1 = CSV.generate do |csv|
       csv << columns_ja
-       practiceapply.each do |apply|
-        user_attributes = apply.attributes 
-        user_attributes["nickname"] = apply.user.nickname
-        user_attributes["last_name"] = apply.user.last_name
-        user_attributes["first_name"] = apply.user.first_name
-        user_attributes["email"] = apply.user.email
+      practiceapply.each do |apply|
+        user_attributes = apply.attributes
+        user_attributes['nickname'] = apply.user.nickname
+        user_attributes['last_name'] = apply.user.last_name
+        user_attributes['first_name'] = apply.user.first_name
+        user_attributes['email'] = apply.user.email
         csv << user_attributes.values_at(*columns)
       end
-
     end
     create_csv(filename, csv1)
   end
@@ -90,7 +87,8 @@ class PracticesController < ApplicationController
   end
 
   def practice_params
-    params.require(:practice).permit(:name, :price, :practice_on, :practice_at, :place, :comment,:capacity).merge(user_id: current_user.id)
+    params.require(:practice).permit(:name, :price, :practice_on, :practice_at, :place, :comment,
+                                     :capacity).merge(user_id: current_user.id)
   end
 
   def not_user_move_index
@@ -98,11 +96,10 @@ class PracticesController < ApplicationController
   end
 
   def create_csv(filename, csv1)
-    File.open("./#{filename}.csv", "w", encoding: "SJIS") do |file|
+    File.open("./#{filename}.csv", 'w', encoding: 'SJIS') do |file|
       file.write(csv1)
     end
-    stat = File::stat("./#{filename}.csv")
+    stat = File.stat("./#{filename}.csv")
     send_file("./#{filename}.csv", filename: "#{filename}.csv", length: stat.size)
   end
 end
-

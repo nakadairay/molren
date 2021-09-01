@@ -1,5 +1,4 @@
 class Practice < ApplicationRecord
-
   with_options presence: true do
     validates :name
     validates :price
@@ -10,6 +9,5 @@ class Practice < ApplicationRecord
   end
 
   belongs_to :user, optional: true
-  has_many :practice_apply, foreign_key: "practice_id", dependent: :destroy
-
+  has_many :practice_apply, foreign_key: 'practice_id', dependent: :destroy
 end
