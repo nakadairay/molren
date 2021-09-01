@@ -1,0 +1,28 @@
+.AccountPage__title h1{
+  font-size: 28px;
+  text-align: center;
+}
+
+.AccountPage{
+  display: flex;
+  justify-content: center;
+}
+
+.card__wrapper{
+  width: 100vh;
+  border-width: 1px;
+  border-style: outset;
+  margin: 50px;
+}
+
+.user__wrapper{
+  width: 100vh;
+  border-width: 1px;
+  border-style: outset;
+  margin: 50px;
+}
+
+.practices-heading{
+  font-size: 28px;
+  text-align: center;
+}

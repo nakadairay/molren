@@ -12,11 +12,11 @@
           <dt>日程：</dt>
           <dd><%= "#{@practice.practice_on.strftime("%Y年%m月%d日")}" %></dd>
           <dt>時間：</dt>
-          <dd><%= "#{@practice.practice_at.strftime("%-H時%I分")}" %>~</dd>
+          <dd><%= "#{@practice.practice_at.strftime("%-H:%I")}" %>~</dd>
           <dt>場所：</dt>
           <dd><%= "#{@practice.place}" %></dd>
           <dt>定員：</dt>
-          <dd><%= "#{@practice.capacity}" %></dd>
+          <dd><%= "#{@practice.capacity}" %>人</dd>
         </dl>
         <p>
           ¥<%= "#{@practice.price}" %>-
@@ -24,14 +24,22 @@
       </div>
     </div>
   </div>
-  <div class="ed-des-apply-btns">
+
     <% if user_signed_in? %>
       <% if current_user.id == @practice.user_id%>
-        <%= link_to "編集", edit_practice_path(@practice.id), method: :get, class: "hover-effect_slide" %>
-        <p class="ortext">or</p>
-        <%= link_to "削除", practice_path(@practice.id), method: :delete, data: { confirm: "削除しますか？" }, class: "hover-effect_slide" %>
-      <% else %>    
-      <%= link_to '申し込む', apply_practice_path(@practice.id), method: :post, data: { confirm: "申し込みしますか？（クレジット決済です）" }, class: "hover-effect_slide" %>
+        <div class="ed-des-apply-btns">
+          <%= link_to "編集", edit_practice_path(@practice.id), method: :get, class: "hover-effect_slide" %>
+          <p class="ortext">or</p>
+          <%= link_to "削除", practice_path(@practice.id), method: :delete, data: { confirm: "削除しますか？" }, class: "hover-effect_slide" %>
+        </div>
+        <div class="csv-btn">
+        <i class="fas fa-file-csv"></i>
+          <%= link_to "参加者名簿CSV出力", csv_practice_user_practice_path(id: @practice.id),class: "csv-text" %>
+        </div>
+      <% else %>
+        <div class="ed-des-apply-btns">
+          <%= link_to '申し込む', apply_practice_path(@practice.id), method: :post, data: { confirm: "申し込みしますか？（クレジット決済です）" }, class: "hover-effect_slide" %>
+        </div>
       <% end %>
     <% else %>
       <%= link_to '申し込むためにはログインが必要です', new_user_session_path %>

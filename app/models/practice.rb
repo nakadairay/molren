@@ -10,6 +10,6 @@ class Practice < ApplicationRecord
   end
 
   belongs_to :user, optional: true
-  has_one :practice_apply, foreign_key: "practice_id", dependent: :destroy
+  has_many :practice_apply, foreign_key: "practice_id", dependent: :destroy
 
 end

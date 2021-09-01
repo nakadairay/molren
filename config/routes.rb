@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   }
   root "practices#index"
 
-  resources :users, only: [:new, :show, :update]
+  resources :users, only: [:new, :show]
   resources :cards, only: [:new, :create]
   resources :practices do
     member do
       post 'apply'
+      get "csv_practice_user"
     end
     collection do
       get 'completion'

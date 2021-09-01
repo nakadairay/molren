@@ -1,49 +1,83 @@
 <%= render "shared/second-header" %>
 
-  <div class="AccountPage">
-    <div class="AccountPage__title">
-      <h1>マイページ</h1>
-    </div><br>
-    <div class="Card__title">
-      <h2>カード情報</h2>
-    </div>
-    <div class="Card_info">
-      【カード番号】
-      <br>
-      <%= "**** **** **** " + @card[:last4] %>
-      <br>
-      【有効期限】
-      <br>
-      <%= @card[:exp_month] %>
-      /
-      <%= @card[:exp_year] %>
-    </div>
-  
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの情報" %>
-      </h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table__col1">ニックネーム</th>
-            <td class="table__col2"><%= @user.nickname %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">誕生日</th>
-            <td class="table__col2"><%= @user.birthday %></td>
-          </tr>
-        </tbody>
-      </table>
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんの練習会"%>
-      </h2>
-      <div class="user__card">
+  <div class="AccountPage__title">
+    <h1>マイページ</h1>
+  </div><br>
+    <div class="AccountPage">
+      <div class="card__wrapper">
+        <div class="Card__title">
+          <h2>カード情報</h2>
+        </div>
+        <div class="Card_info">
+          【カード番号】
+          <br>
+          <%= "**** **** **** " + @card[:last4] %>
+          <br>
+          【有効期限】
+          <br>
+          <%= @card[:exp_month] %>
+          /
+          <%= @card[:exp_year] %>
+        </div>
+      </div>
+      
+      <div class="user__wrapper">
+        <h2 class="page-heading">
+          <%= "#{@user.nickname}さんの情報" %>
+        </h2>
+        <table class="table">
+          <tbody>
+            <tr>
+              <th class="table__col1">名前</th>
+              <td class="table__col2"><%= @user.last_name %><%= @user.first_name %></td>
+            </tr>
+            <tr>
+              <th class="table__col1">誕生日</th>
+              <td class="table__col2"><%= @user.birthday %></td>
+            </tr>
+            <tr>
+              <th class="table__col1">メール</th>
+              <td class="table__col2"><%= @user.email %></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
+
+      <h2 class="practices-heading">
+        <%= "#{@user.nickname}さんの練習会"%>
+      </h2>
+      <% if @practices.blank? %>
+        <%= link_to new_practice_path do %>
+        <div class='practices'>
+          <h3 class="content-1">
+            練習会がありません
+          </h3>
+          <p class="content-2">練習会を作成しよう</p>
+          <p>値段：1234円</p>
+          </div>
+        </div>
+        <% end %>
+      <% else %>
+        <ul class="product-list">
+        <% @practices.each do |practice| %>
+          <li>
+            <div class="practices">
+              <h3 class="content-1"><%= practice.name %></h3>
+              <p class="content-2"><%= practice.practice_on.strftime("%Y/%m/%d") %></p>
+              <p class="content-2"><%= practice.practice_at.strftime("%-H:%I") %>~</p>
+              <%= link_to '詳細はこちら', practice_path(practice.id), class: "content-3" %>
+              <p>値段：<%= practice.price %>円</p>
+            </div>
+          </li>
+        </ul>
+      <% end %>
+
+      <% end %>
       <br>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <br>
-      <%= link_to "練習会一覧へ戻る", root_path %>
-    </div>
-  </div>
+
+      <div class="ed-des-apply-btns">
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "hover-effect_slide" %>
+        <br>
+        <%= link_to "練習会一覧", root_path, class: "hover-effect_slide" %>
+      </div>

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @practices = current_user.practices
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     card = Card.find_by(user_id: current_user.id)
 
@@ -13,18 +14,4 @@ class UsersController < ApplicationController
     @card = customer.cards.first
   end
 
-  def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to root_path
-    else
-      redirect_to action: 'show'
-    end
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:nickname, :email)
-  end
 end

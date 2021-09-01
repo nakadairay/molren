@@ -64,3 +64,33 @@
 .ortext{
   padding: 0.4em 1.6em;
 }
+
+.csv-btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #00b5ad;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  position:fixed;
+  right:50px;
+  bottom:50px;
+}
+
+.fa-file-csv{
+  font-size: 4em;
+}
+
+.csv-text{
+  display: block;
+  margin: 0.4em;
+  padding: 0.4em 1.6em;
+  font-size: 1em;
+  color: #00b5ad;
+  text-decoration: none;
+  user-select: none;
+}
