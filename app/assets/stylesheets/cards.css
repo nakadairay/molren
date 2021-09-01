@@ -1,0 +1,72 @@
+.card-form{
+
+}
+
+.Cardpage h1{
+  text-align: center;
+}
+
+.form-wrap{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.number{
+  width: 180px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: solid 1px #ccc;
+  background-image: none;
+  font-size: 16px;
+}
+
+.cvc{
+  width: 100px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: solid 1px #ccc;
+  background-image: none;
+  font-size: 16px;
+}
+
+.input-expiration-date-wrap{
+  display: flex;
+}
+
+.exp_month{
+  width: 80px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: solid 1px #ccc;
+  background-image: none;
+  font-size: 16px;
+}
+
+.exp_year{
+  width: 80px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: solid 1px #ccc;
+  background-image: none;
+  font-size: 16px;
+}
+
+.card-form-btn{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.card-button{
+
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #00b5ad;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #00b5ad solid;
+  transition: 0.2s ease;
+}

@@ -43,7 +43,8 @@
         <li>
           <div class="practices">
             <h3 class="content-1"><%= practice.name %></h3>
-            <p class="content-2"><%= practice.comment %></p>
+            <p class="content-2"><%= practice.practice_on.strftime("%Y/%m/%d") %></p>
+            <p class="content-2"><%= practice.practice_at.strftime("%-H:%I") %>~</p>
             <%= link_to '詳細はこちら', practice_path(practice.id), class: "content-3" %>
             <p>値段：<%= practice.price %>円</p>
           </div>
