@@ -1,14 +1,36 @@
-|                   | 備考  |
-| ----------------- | ---- |
-| アプリケーション名   | molren |
-| アプリケーション概要 | 練習会の作成・編集・削除<br>ユーザーの登録(sns認証)<br>クレジットカード決済<br>名簿csv出力 |
-| URL               | https://molren.herokuapp.com/  |
-| テスト用アカウント   | 練習会編集/削除用<br>email: test@nakadaira.com<br>pw:test1234<br><br>練習会申込用<br>email: test@yoshiharu.com<br>pw:test1234<br><br>Basic認証<br>user:admin<br>pw:2222 |
-| 利用方法           | ユーザーは新規会員登録/ログイン後、練習会を見つけて申込したり、自分自身で練習会を作成することができる。 |
-| 目指した課題解決    | どこで練習会が行われてるかわからない人が気軽に練習会に参加できるような環境を作る。 |
-| 洗い出した案件      | こちらのスプレッドシートを参考ください<br>https://docs.google.com/spreadsheets/d/1BaacarJXHB8yBmewj2QmtROrai7MU_aQFEdWnoeZLB0/edit?usp=sharing  |
-| 実装予定の機能      | 定員に満たされた時点で申し込みできないようにする機能 |
-| ローカルでの動作方法 | Ruby version 2.6.5<br>'git clone'後<br>```bundle install```<br> ```rails db:migrate```<br>をお願いします |
+# molren
+モルック練習会作成アプリです<br>
+Mölkkyと練習(Rensyu)の頭文字をとってmolrenと名付けました！
+
+## アプリケーション概要
+* 練習会の作成・編集・削除
+* ユーザーの登録(sns認証)
+* クレジットカード決済機能
+* 名簿csv出力機能
+
+## URL               
+https://molren.herokuapp.com/(URL)
+* テスト用アカウント
+  * 練習会編集/削除用<br>email: test@nakadaira.com<br>pw:test1234<br>
+  * 練習会申込用<br>email: test@yoshiharu.com<br>pw:test1234<br>
+* Basic認証
+  * user:admin
+  * pw:2222<br>
+
+## 利用方法
+ユーザーは新規会員登録/ログイン後、練習会を見つけて申込したり、自分自身で練習会を作成することができる。
+
+## 目指した課題解決
+どこで練習会が行われてるかわからない人が気軽に練習会に参加できるような環境を作る。
+
+## 洗い出した案件
+こちらのスプレッドシートを参考ください<br>https://docs.google.com/spreadsheets/d/1BaacarJXHB8yBmewj2QmtROrai7MU_aQFEdWnoeZLB0/edit?usp=sharing(URL)
+
+## 実装予定の機能
+定員に満たされた時点で申し込みできないようにする機能
+
+## ローカルでの動作方法
+Ruby version 2.6.5<br>```git clone```後<br>```bundle install```<br> ```rails db:migrate```<br>をお願いします |
 
 
 # テーブル設計
