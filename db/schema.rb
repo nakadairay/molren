@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_20_092334) do
+ActiveRecord::Schema.define(version: 2021_09_10_021511) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "customer_token", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_092334) do
     t.integer "capacity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "applies_count", default: 0, null: false
     t.index ["user_id"], name: "index_practices_on_user_id"
   end
 
