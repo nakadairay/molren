@@ -16,7 +16,13 @@
           <dt>場所：</dt>
           <dd><%= "#{@practice.place}" %></dd>
           <dt>定員：</dt>
-          <dd><%= "#{@practice.capacity}" %>人</dd>
+          <% if @practice.capacity == nil %>
+            <dd>定員はありません</dd>
+          <% elsif @practice.applies_count == @practice.capacity %>
+            <dd><%= "#{@practice.applies_count}"%>/<%="#{@practice.capacity}" %>人　※満員です</dd>
+          <% else %>
+            <dd><%= "#{@practice.applies_count}"%>/<%="#{@practice.capacity}" %>人</dd>
+          <% end %>
         </dl>
         <p>
           ¥<%= "#{@practice.price}" %>-
@@ -36,6 +42,8 @@
         <i class="fas fa-file-csv"></i>
           <%= link_to "参加者名簿CSV出力", csv_practice_user_practice_path(id: @practice.id),class: "csv-text" %>
         </div>
+      <% elsif @practice.applies_count == @practice.capacity %>
+         <p>満員のため申し込みできません</p>
       <% else %>
         <div class="ed-des-apply-btns">
           <%= link_to '申し込む', apply_practice_path(@practice.id), method: :post, data: { confirm: "申し込みしますか？（クレジット決済です）" }, class: "hover-effect_slide" %>
