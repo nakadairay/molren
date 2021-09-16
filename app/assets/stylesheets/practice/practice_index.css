@@ -68,6 +68,12 @@
 
 .content-3:hover {
   border-bottom: #00b5ad 1px solid;
+  padding: 0.8em 0;
+}
+
+.content-4 {
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn-circle-fishy {
