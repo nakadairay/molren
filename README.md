@@ -9,7 +9,7 @@ Mölkkyと練習(Rensyu)の頭文字をとってmolrenと名付けました！
 * 名簿csv出力機能
 
 ## URL               
-https://molren.herokuapp.com/(URL)
+https://molren.herokuapp.com/
 * テスト用アカウント
   * 練習会編集/削除用<br>email: test@nakadaira.com<br>pw:test1234<br>
   * 練習会申込用<br>email: test@yoshiharu.com<br>pw:test1234<br>
@@ -24,7 +24,7 @@ https://molren.herokuapp.com/(URL)
 どこで練習会が行われてるかわからない人が気軽に練習会に参加できるような環境を作る。
 
 ## 洗い出した案件
-こちらのスプレッドシートを参考ください<br>https://docs.google.com/spreadsheets/d/1BaacarJXHB8yBmewj2QmtROrai7MU_aQFEdWnoeZLB0/edit?usp=sharing(URL)
+こちらのスプレッドシートを参考ください<br>https://docs.google.com/spreadsheets/d/1BaacarJXHB8yBmewj2QmtROrai7MU_aQFEdWnoeZLB0/edit?usp=sharing
 
 ## 実装予定の機能
 定員に満たされた時点で申し込みできないようにする機能
