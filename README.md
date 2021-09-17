@@ -27,10 +27,14 @@ https://molren.herokuapp.com/
 こちらのスプレッドシートを参考ください<br>https://docs.google.com/spreadsheets/d/1BaacarJXHB8yBmewj2QmtROrai7MU_aQFEdWnoeZLB0/edit?usp=sharing
 
 ## 実装予定の機能
-定員に満たされた時点で申し込みできないようにする機能
+写真投稿機能
 
 ## ローカルでの動作方法
-Ruby version 2.6.5<br>```git clone```後<br>```bundle install```<br> ```rails db:migrate```<br>をお願いします |
+Ruby version 2.6.5<br>
+```git clone```後<br>
+```bundle install```<br>
+```rails db:migrate```<br>
+をお願いします |
 
 
 # テーブル設計
@@ -59,16 +63,17 @@ Ruby version 2.6.5<br>```git clone```後<br>```bundle install```<br> ```rails db
 
 ## practices テーブル
 
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| name         | string     | null: false                    |
-| price        | integer    | null: false                    |
-| practice_on  | date       | null: false                    |
-| practice_at  | time       | null: false                    |
-| user         | references | null: false, foreign_key: true |
-| place        | text       | null: false                    |
-| comment      | text       | null: false                    |
-| capacity     | integer    | null: false                    |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| name          | string     | null: false                    |
+| price         | integer    | null: false                    |
+| practice_on   | date       | null: false                    |
+| practice_at   | time       | null: false                    |
+| user          | references | null: false, foreign_key: true |
+| place         | text       | null: false                    |
+| comment       | text       | null: false                    |
+| capacity      | integer    | null: false                    |
+| applies_count | integer.   | null: false                    |
 
 ### Association
 
