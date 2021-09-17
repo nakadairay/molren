@@ -1,4 +1,5 @@
 # molren
+[![Image from Gyazo](https://i.gyazo.com/b5dc19827d4dd37bd40066b64339e460.png)](https://gyazo.com/b5dc19827d4dd37bd40066b64339e460)
 モルック練習会作成アプリです<br>
 Mölkkyと練習(Rensyu)の頭文字をとってmolrenと名付けました！
 
